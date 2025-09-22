@@ -1,22 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wealth Analyzer Dashboard
 
-## Getting Started
+A Next.js application integrated with Python AI agent for analyzing wealth and economic status of public figures.
 
-First, run the development server:
+## Features
+
+- **AI-Powered Analysis**: Uses OpenAI GPT models to analyze wealth indicators
+- **Image Analysis**: Optional image upload for lifestyle analysis
+- **Real-time Results**: Live analysis with confidence scores and detailed explanations
+- **Modern UI**: Clean, responsive interface built with React and TypeScript
+
+## Setup
+
+### Prerequisites
+
+- Node.js 18+
+- Python 3.8+
+- OpenAI API Key
+
+### Installation
+
+1. **Install Node.js dependencies:**
+```bash
+npm install
+```
+
+2. **Install Python dependencies:**
+```bash
+cd python
+pip install -r requirements.txt
+cd ..
+```
+
+3. **Set up environment variables:**
+
+Create a `.env.local` file in the root directory:
+```bash
+OPENAI_API_KEY=sk-your-openai-api-key-here
+```
+
+### Run the application:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How it Works
+
+### Architecture
+
+1. **Frontend (Next.js/React)**: User interface for input and results display
+2. **API Routes (Next.js)**: RESTful endpoints that handle HTTP requests
+3. **Python Agent**: AI-powered analysis using OpenAI GPT models via subprocess calls
+
+### Analysis Process
+
+1. User enters a name and optionally uploads an image
+2. Frontend converts image to base64 and sends POST request to `/api/analyze`
+3. API route spawns Python subprocess with the analysis parameters
+4. Python agent performs web search and image analysis using OpenAI API
+5. Results are returned as JSON and displayed in the frontend
+
+### Data Flow
+
+```
+User Input → Next.js API Route → Python Subprocess → OpenAI API → Analysis Results → Frontend Display
+```
+
+## API Endpoints
+
+### POST `/api/analyze`
+
+Analyzes wealth of a person based on name and optional image.
+
+**Request Body:**
+```json
+{
+  "firstName": "Elon",
+  "lastName": "Musk",
+  "imageBase64": "base64_encoded_image_data" // optional
+}
+```
+
+**Response:**
+```json
+{
+  "persona": "Elon Musk",
+  "risultato_finale": {
+    "punteggio_finale": 95,
+    "categoria": "molto_ricco",
+    "spiegazione": "Detailed analysis...",
+    "confidenza": 0.92,
+    "fattori_principali": ["CEO Tesla", "SpaceX Founder"]
+  },
+  "analisi_immagine": { /* if image provided */ }
+}
+```
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
