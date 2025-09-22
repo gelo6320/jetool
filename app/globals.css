@@ -706,3 +706,10 @@ body {
     width: 250px;
   }
 }
+
+/* Image Score Small */
+.image-score-small {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-left: 10px;
+}

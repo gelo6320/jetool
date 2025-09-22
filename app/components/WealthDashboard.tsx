@@ -347,6 +347,11 @@ const WealthDashboard: React.FC = () => {
 
               <div className="confidence-badge">
                 Confidence: {Math.round(results.confidenza * 100)}%
+                {results.analisi_immagine && results.analisi_immagine.punteggio_immagine && (
+                  <span className="image-score-small">
+                    • Image: {results.analisi_immagine.punteggio_immagine}/100
+                  </span>
+                )}
               </div>
             </div>
 

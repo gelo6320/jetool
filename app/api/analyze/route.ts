@@ -36,11 +36,13 @@ class JewishIdentityAnalyzerAgent {
       const content: any[] = [
         {
           type: "text",
-          text: `Analyze this image of ${personName} to identify potential Jewish ethnic or cultural indicators.
-Look for: physical features associated with Ashkenazi/Sephardic heritage, traditional Jewish clothing or accessories,
-religious symbols (Star of David, menorah, tallit), cultural items, Hebrew writing, synagogue attendance indicators.
+          text: `Analyze this image for cultural and ethnic indicators that may suggest Jewish heritage.
+Look for: traditional Jewish religious symbols (Star of David, menorah, tallit, tefillin), Hebrew writing or text,
+cultural items (kippah, tallit, mezuzah), clothing with Jewish religious significance, synagogue or Jewish community settings,
+historical Jewish cultural artifacts.
 
-Provide a score from 0-100 based on visible signs of Jewish heritage and a brief explanation of observed elements.
+Focus on visual elements that are clearly identifiable as Jewish cultural or religious symbols.
+Provide a score from 0-100 based on visible signs of Jewish cultural/religious elements and a brief explanation of observed elements.
 Respond in JSON format: {{"punteggio_immagine": 0-100, "indicatori_visivi": ["list", "of", "elements"], "spiegazione": "brief description"}}`
         }
       ];
