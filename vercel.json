@@ -1,8 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "pip install -r requirements.txt && npm run build",
   "functions": {
-    "api/analyze.py": {
-      "runtime": "python3.9"
+    "app/api/analyze/route.ts": {
+      "runtime": "nodejs18.x"
     }
   }
 }
