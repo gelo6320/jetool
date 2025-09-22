@@ -2,7 +2,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Search, DollarSign, User, Camera, Upload } from 'lucide-react';
+import Image from 'next/image';
+import { Search, Camera, Upload } from 'lucide-react';
 
 interface JewishIdentityAnalysis {
   persona: string;
@@ -15,6 +16,12 @@ interface JewishIdentityAnalysis {
     punteggio_immagine: number;
     indicatori_visivi: string[];
   };
+}
+
+interface AnalyzeRequest {
+  firstName: string;
+  lastName: string;
+  imageBase64?: string;
 }
 
 const WealthDashboard: React.FC = () => {
@@ -107,7 +114,7 @@ const WealthDashboard: React.FC = () => {
 
     try {
       // Prepare request data
-      const requestData: any = {
+      const requestData: AnalyzeRequest = {
         firstName: firstName.trim(),
         lastName: lastName.trim(),
       };
@@ -117,7 +124,7 @@ const WealthDashboard: React.FC = () => {
         try {
           const base64 = await fileToBase64(selectedFile);
           requestData.imageBase64 = base64;
-        } catch (error) {
+        } catch (_error) {
           alert('Failed to process image. Please try again.');
           setIsAnalyzing(false);
           return;
@@ -291,10 +298,12 @@ const WealthDashboard: React.FC = () => {
 
         {/* Side Image */}
         <div className="side-image-container">
-          <img
+          <Image
             src="/assets/j.jpg"
             alt="Side image"
             className="side-image"
+            width={400}
+            height={300}
           />
         </div>
 
@@ -392,10 +401,12 @@ const WealthDashboard: React.FC = () => {
               </div>
 
               <div className="how-it-works-image">
-                <img
+                <Image
                   src="/assets/in the media.jpeg"
                   alt="Jew Detector in the Media"
                   className="media-image"
+                  width={600}
+                  height={400}
                 />
               </div>
             </div>

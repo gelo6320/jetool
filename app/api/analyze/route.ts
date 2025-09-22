@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
           try {
             const parsedResult = JSON.parse(stdout.trim());
             resolve(parsedResult);
-          } catch (parseError) {
+          } catch (_parseError) {
             reject(new Error(`Failed to parse Python output: ${stdout}`));
           }
         } else {
