@@ -125,7 +125,7 @@ Consider factors like: surname origin, given name origin, family history, religi
 Provide ONLY a JSON in the format:
 {{
   "probabilita_percentuale": 0-100,
-  "categoria": "molto_bassa/bassa/moderata/alta/molto_alta",
+  "categoria": "very_low/low/moderate/high/very_high",
   "indicatori_principali": ["list", "of", "key", "indicators"],
   "spiegazione": "Brief explanation of the probability assessment (max 150 words)",
   "confidenza": 0.0-1.0
@@ -164,7 +164,7 @@ Provide ONLY a JSON in the format:
 
         return {
           probabilita_percentuale: probability,
-          categoria: probability > 40 ? "moderata" : "bassa",
+          categoria: probability > 40 ? "moderate" : "low",
           indicatori_principali: ["fallback analysis"],
           spiegazione: result.substring(0, 200),
           confidenza: 0.5
@@ -175,7 +175,7 @@ Provide ONLY a JSON in the format:
 
         return {
           probabilita_percentuale: probability,
-          categoria: probability > 40 ? "moderata" : "bassa",
+          categoria: probability > 40 ? "moderate" : "low",
           indicatori_principali: ["analysis error fallback"],
           spiegazione: result.substring(0, 200),
           confidenza: 0.3

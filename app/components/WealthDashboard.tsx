@@ -178,22 +178,22 @@ const WealthDashboard: React.FC = () => {
 
   const getCategoryColor = (categoria: string): string => {
     switch (categoria.toLowerCase()) {
-      case 'molto_bassa': return '#EF4444';
-      case 'bassa': return '#F59E0B';
-      case 'moderata': return '#FCD34D';
-      case 'alta': return '#10B981';
-      case 'molto_alta': return '#3B82F6';
+      case 'very_low': return '#EF4444';
+      case 'low': return '#F59E0B';
+      case 'moderate': return '#FCD34D';
+      case 'high': return '#10B981';
+      case 'very_high': return '#3B82F6';
       default: return '#6B7280';
     }
   };
 
   const getCategoryLabel = (categoria: string): string => {
     switch (categoria.toLowerCase()) {
-      case 'molto_bassa': return 'Very Low Probability';
-      case 'bassa': return 'Low Probability';
-      case 'moderata': return 'Moderate Probability';
-      case 'alta': return 'High Probability';
-      case 'molto_alta': return 'Very High Probability';
+      case 'very_low': return 'Very Low Probability';
+      case 'low': return 'Low Probability';
+      case 'moderate': return 'Moderate Probability';
+      case 'high': return 'High Probability';
+      case 'very_high': return 'Very High Probability';
       default: return 'Unknown';
     }
   };

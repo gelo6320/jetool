@@ -1,12 +1,12 @@
-# Wealth Analyzer Dashboard
+# Jew Detector
 
-A Next.js application integrated with Python AI agent for analyzing wealth and economic status of public figures.
+A Next.js application integrated with OpenAI for analyzing Jewish identity probability of individuals based on names and images.
 
 ## Features
 
-- **AI-Powered Analysis**: Uses OpenAI GPT models to analyze wealth indicators
-- **Image Analysis**: Optional image upload for lifestyle analysis
-- **Real-time Results**: Live analysis with confidence scores and detailed explanations
+- **AI-Powered Analysis**: Uses OpenAI GPT models to analyze Jewish heritage indicators
+- **Image Analysis**: Optional image upload for cultural and religious symbol detection
+- **Real-time Results**: Live analysis with probability scores and detailed explanations
 - **Modern UI**: Clean, responsive interface built with React and TypeScript
 
 ## Setup
@@ -86,15 +86,20 @@ Analyzes wealth of a person based on name and optional image.
 **Response:**
 ```json
 {
-  "persona": "Elon Musk",
-  "risultato_finale": {
-    "punteggio_finale": 95,
-    "categoria": "molto_ricco",
-    "spiegazione": "Detailed analysis...",
-    "confidenza": 0.92,
-    "fattori_principali": ["CEO Tesla", "SpaceX Founder"]
+  "persona": "Albert Einstein",
+  "timestamp": "2025-09-22",
+  "dati_ricerca": "Search results summary...",
+  "analisi_immagine": {
+    "punteggio_immagine": 85,
+    "indicatori_visivi": ["religious symbols", "cultural artifacts"]
   },
-  "analisi_immagine": { /* if image provided */ }
+  "risultato_finale": {
+    "probabilita_percentuale": 95,
+    "categoria": "very_high",
+    "spiegazione": "Strong indicators of Jewish heritage found...",
+    "confidenza": 0.92,
+    "indicatori_principali": ["Ashkenazi descent", "cultural background"]
+  }
 }
 ```
 
